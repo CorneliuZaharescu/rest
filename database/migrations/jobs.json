@@ -1,0 +1,202 @@
+[
+  {
+    "company_name":"Company name 1",
+    "company_description":"Description 1",
+    "company_email":"email_1@email.com",
+    "company_phone":"+37311111111",
+    "job_title":"Title 1",
+    "job_description":"Job description 1",
+    "category_id":1,
+    "city_id":1
+  },
+  {
+    "company_name":"Company name 2",
+    "company_description":"Description 2",
+    "company_email":"email_2@email.com",
+    "company_phone":"+37322222222",
+    "job_title":"Title 2",
+    "job_description":"Job description 2",
+    "category_id":1,
+    "city_id":1
+  },
+  {
+    "company_name":"Company name 3",
+    "company_description":"Description 3",
+    "company_email":"email_3@email.com",
+    "company_phone":"+37333333333",
+    "job_title":"Title 3",
+    "job_description":"Job description 3",
+    "category_id":1,
+    "city_id":1
+  },
+  {
+    "company_name":"Company name 4",
+    "company_description":"Description 4",
+    "company_email":"email_4@email.com",
+    "company_phone":"+37344444444",
+    "job_title":"Title 1",
+    "job_description":"Job description 1",
+    "category_id":1,
+    "city_id":1
+  },
+  {
+    "company_name":"Company name 5",
+    "company_description":"Description 5",
+    "company_email":"email_5@email.com",
+    "company_phone":"+37355555555",
+    "job_title":"Title 5",
+    "job_description":"Job description 5",
+    "category_id":2,
+    "city_id":2
+  },
+  {
+    "company_name":"Company name 6",
+    "company_description":"Description 6",
+    "company_email":"email_6@email.com",
+    "company_phone":"+37366666666",
+    "job_title":"Title 6",
+    "job_description":"Job description 6",
+    "category_id":2,
+    "city_id":2
+  },
+  {
+    "company_name":"Company name 7",
+    "company_description":"Description 7",
+    "company_email":"email_7@email.com",
+    "company_phone":"+37377777777",
+    "job_title":"Title 7",
+    "job_description":"Job description 7",
+    "category_id":2,
+    "city_id":2
+  },
+  {
+    "company_name":"Company name 8",
+    "company_description":"Description 8",
+    "company_email":"email_8@email.com",
+    "company_phone":"+3738888888",
+    "job_title":"Title 1",
+    "job_description":"Job description 8",
+    "category_id":2,
+    "city_id":2
+  },
+  {
+    "company_name":"Company name 9",
+    "company_description":"Description 9",
+    "company_email":"email_9@email.com",
+    "company_phone":"+37399999999",
+    "job_title":"Title 9",
+    "job_description":"Job description 9",
+    "category_id":3,
+    "city_id":3
+  },
+  {
+    "company_name":"Company name 10",
+    "company_description":"Description 10",
+    "company_email":"email_10@email.com",
+    "company_phone":"+37300000000",
+    "job_title":"Title 10",
+    "job_description":"Job description 10",
+    "category_id":3,
+    "city_id":3
+  },
+  {
+    "company_name":"Company name 11",
+    "company_description":"Description 11",
+    "company_email":"email_11@email.com",
+    "company_phone":"+373111111111",
+    "job_title":"Title 11",
+    "job_description":"Job description 11",
+    "category_id":3,
+    "city_id":3
+  },
+  {
+    "company_name":"Company name 12",
+    "company_description":"Description 12",
+    "company_email":"email_12@email.com",
+    "company_phone":"+37322222222",
+    "job_title":"Title 12",
+    "job_description":"Job description 12",
+    "category_id":3,
+    "city_id":3
+  },
+  {
+    "company_name":"Company name 13",
+    "company_description":"Description 13",
+    "company_email":"email_13@email.com",
+    "company_phone":"+37333333333",
+    "job_title":"Title 13",
+    "job_description":"Job description 13",
+    "category_id":4,
+    "city_id":4
+  },
+  {
+    "company_name":"Company name 14",
+    "company_description":"Description 14",
+    "company_email":"email_14@email.com",
+    "company_phone":"+37344444444",
+    "job_title":"Title 14",
+    "job_description":"Job description 14",
+    "category_id":4,
+    "city_id":4
+  },
+  {
+    "company_name":"Company name 15",
+    "company_description":"Description 15",
+    "company_email":"email_15@email.com",
+    "company_phone":"+37355555555",
+    "job_title":"Title 15",
+    "job_description":"Job description 15",
+    "category_id":4,
+    "city_id":4
+  },
+  {
+    "company_name":"Company name 16",
+    "company_description":"Description 16",
+    "company_email":"email_16@email.com",
+    "company_phone":"+37366666666",
+    "job_title":"Title 16",
+    "job_description":"Job description 16",
+    "category_id":5,
+    "city_id":5
+  },
+  {
+    "company_name":"Company name 17",
+    "company_description":"Description 17",
+    "company_email":"email_17@email.com",
+    "company_phone":"+37377777777",
+    "job_title":"Title 17",
+    "job_description":"Job description 17",
+    "category_id":5,
+    "city_id":5
+  },
+  {
+    "company_name":"Company name 18",
+    "company_description":"Description 18",
+    "company_email":"email_18@email.com",
+    "company_phone":"+37388888888",
+    "job_title":"Title 18",
+    "job_description":"Job description 18",
+    "category_id":5,
+    "city_id":5
+  },
+  {
+    "company_name":"Company name 19",
+    "company_description":"Description 19",
+    "company_email":"email_19@email.com",
+    "company_phone":"+37399999999",
+    "job_title":"Title 19",
+    "job_description":"Job description 19",
+    "category_id":5,
+    "city_id":5
+  },
+  {
+    "company_name":"Company name 20",
+    "company_description":"Description 20",
+    "company_email":"email_20@email.com",
+    "company_phone":"+37300000000",
+    "job_title":"Title 20",
+    "job_description":"Job description 20",
+    "category_id":5,
+    "city_id":5
+  }
+]
