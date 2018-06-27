@@ -12,7 +12,6 @@
 <!-- Load Javascript Libraries (AngularJS, JQuery, Bootstrap) -->
 <script type="text/javascript" src="<?= asset('bower_components/angular/angular.min.js') ?>"></script>
 <script type="text/javascript" src="<?= asset('bower_components/angular-route/angular-route.min.js') ?>"></script>
-<script type="text/javascript" src="<?= asset('bower_components/angular-cookies/angular-cookies.min.js') ?>"></script>
 
 <!-- AngularJS Application Scripts -->
 <script src="<?= asset('app/app.js') ?>"></script>
