@@ -30,5 +30,6 @@
 <script src="<?= asset('app/app.js') ?>"></script>
 <script src="<?= asset('app/services/rest.js') ?>"></script>
 <script src="<?= asset('app/controllers/main.js') ?>"></script>
+<script src="<?= asset('app/controllers/job.js') ?>"></script>
 </body>
 </html>
