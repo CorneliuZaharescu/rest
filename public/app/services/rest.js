@@ -1,8 +1,10 @@
 app.factory('rest', ['$http', function($http) {
-    var api_url ='http://localhost/api/v1/';
+    var api_url ='http://localhost:8000/api/';
     return {
         get: function (controller) {
-            return $http.get(api_url + controller);
+            return $http.get(api_url + controller).then(function(response){
+                return response
+            });
         }
     };
     return {
