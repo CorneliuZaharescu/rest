@@ -5,11 +5,11 @@ app.factory('rest', ['$http', function($http) {
             return $http.get(api_url + controller).then(function(response){
                 return response
             });
-        }
-    };
-    return {
+        },
         getItem: function (controller, id) {
-            return $http.get(api_url + controller + '/' + id);
+            return $http.get(api_url + controller + '/' + id).then(function(response){
+                return response
+            });
         }
     };
 }]);
