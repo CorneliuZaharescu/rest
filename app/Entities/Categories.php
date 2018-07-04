@@ -14,12 +14,12 @@ class Categories
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    protected $id;
+    public $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=255)
      */
-    protected $name;
+    public $name;
 
     /**
     * @param $name
@@ -37,6 +37,10 @@ class Categories
     public function getName()
     {
         return $this->name;
+    }
+    public function setName($name)
+    {
+        return $this->name = $name;
     }
 
 }

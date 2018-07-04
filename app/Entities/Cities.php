@@ -15,12 +15,12 @@ class Cities
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    protected $id;
+    public $id;
 
     /**
      * @ORM\Column(type="string")
      */
-    protected $name;
+    public $name;
 
     /**
     * @param $name

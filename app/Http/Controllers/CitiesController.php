@@ -1,13 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use App\Cities;
+use App\Repository\CitiesRepository as repo;
 
 class CitiesController extends Controller
 {
-    public function index() {
-        return Cities::orderBy('id', 'asc')->get();
+    private $repo;
+
+    public function __construct(repo $repo)
+    {
+        $this->repo = $repo;
+    }
+
+    public function index()
+    {
+        return $this->repo->getAll();
     }
 }

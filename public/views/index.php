@@ -3,6 +3,7 @@
 <head>
     <title>Project name</title>
     <link rel="stylesheet" type="text/css" href="<?=  asset('bower_components/bootstrap/dist/css/bootstrap.min.css') ?>">
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -23,6 +24,7 @@
 </div>
 
 <!-- Load Javascript Libraries (AngularJS, JQuery, Bootstrap) -->
+<script type="text/javascript" src="<?= asset('bower_components/bootstrap/dist/js/bootstrap.js') ?>"></script>
 <script type="text/javascript" src="<?= asset('bower_components/angular/angular.min.js') ?>"></script>
 <script type="text/javascript" src="<?= asset('bower_components/angular-route/angular-route.min.js') ?>"></script>
 
@@ -31,5 +33,6 @@
 <script src="<?= asset('app/services/rest.js') ?>"></script>
 <script src="<?= asset('app/controllers/main.js') ?>"></script>
 <script src="<?= asset('app/controllers/job.js') ?>"></script>
+
 </body>
 </html>

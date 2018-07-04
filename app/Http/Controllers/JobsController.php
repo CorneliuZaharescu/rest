@@ -1,25 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Repository\JobsRepository as repo;
+use Illuminate\Support\Facades\Input;
 
-use Illuminate\Http\Request;
-use App\Jobs;
 class JobsController extends Controller
 {
+    private $repo;
+
+    public function __construct(repo $repo)
+    {
+        $this->repo = $repo;
+    }
+
     public function index()
     {
-        $jobs = Jobs::orderBy('id', 'asc')->get();
-        foreach ($jobs as $job) {
-            $job->category;
-            $job->city;
-        }
-        return $jobs;
+        return $this->repo->getAll();
     }
 
     public function getItem($id) {
-        $job = Jobs::find($id);
-        $job->category;
-        $job->city;
-        return $job;
+        $item = $this->repo->getById($id);
+        return $item;
+    }
+
+    public function search() {
+        return $this->repo->search(Input::all());
     }
 }

@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('jobs', 'JobsController@index');
+Route::post('jobs/search', 'JobsController@search');
 Route::get('jobs/{id}', 'JobsController@getItem');
 Route::get('categories', 'CategoriesController@index');
 Route::get('cities', 'CitiesController@index');

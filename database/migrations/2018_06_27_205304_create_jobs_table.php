@@ -39,8 +39,9 @@ class CreateJobsTable extends Migration
         try {
             $content = file_get_contents("jobs.json", FILE_USE_INCLUDE_PATH);
             $data = json_decode($content);
+            $startDate = time();
             foreach ($data as $key => $item) {
-                $datetime = date('Y-m-d H:i:s');
+                $day = rand(1,10);
                 try {
                     DB::table('jobs')->insert(
                         [
@@ -52,8 +53,8 @@ class CreateJobsTable extends Migration
                             "job_description" => $item->job_description,
                             "category_id" => $item->category_id,
                             "city_id" => $item->city_id,
-                            "created_at" => $datetime,
-                            "updated_at" => $datetime
+                            "created_at" => date('Y-m-d H:i:s', strtotime("+".$day." day", $startDate)),
+                            "updated_at" => date('Y-m-d H:i:s', strtotime("+".$day." day", $startDate))
                         ]
                     );
                 } catch (Exception $e) {
@@ -72,6 +73,6 @@ class CreateJobsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jobs');
+        Schema::drop('jobs');
     }
 }

@@ -17,42 +17,46 @@ class Jobs
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    protected $id;
+    public $id;
     /**
      * @ORM\Column(type="string", length=255)
      */
-    protected $company_name;
+    public $company_name;
     /**
      * @ORM\Column(type="text")
      */
-    protected $company_description;
+    public $company_description;
     /**
      * @ORM\Column(type="string", length=128)
      */
-    protected $company_email;
+    public $company_email;
     /**
      * @ORM\Column(type="string", length=50)
      */
-    protected $company_phone;
+    public $company_phone;
     /**
      * @ORM\Column(type="string", length=255)
      */
-    protected $job_title;
+    public $job_title;
     /**
      * @ORM\Column(type="text")
      */
-    protected $job_description;
+    public $job_description;
+
     /**
-     * @ORM\Id
-     * @ORM\OneToOne(targetEntity="categories")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\Column(type="text")
      */
-    protected $category_id;
-    /**
-     * @ORM\Id
-     * @ORM\OneToOne(targetEntity="cities")
-     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
-     */
-    protected $city_id;
+    public $created_at;
+//    /**
+//     * @ORM\@OneToOne(targetEntity="Categories")
+//     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+//     */
+//    public $category_id;
+//    /**
+//     * @ORM\city_id
+//     * @ORM\OneToOne(targetEntity="Cities")
+//     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+//     */
+//    public $city_id;
 
 }
