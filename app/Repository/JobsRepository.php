@@ -33,7 +33,7 @@ class JobsRepository {
         */
         return $this->em->getRepository($this->class)->createQueryBuilder('o')
 //            ->where('o.category_id = :category_id')
-//            ->andWhere('o.city_id = city_id')
+//            ->andWhere('o.city_id = :city_id')
             ->andWhere('o.created_at BETWEEN :start_date AND :end_date')
             ->andWhere('o.job_description LIKE :keyword')
 //            ->setParameter('category_id', $obj["category_id"])
