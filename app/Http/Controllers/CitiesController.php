@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Repository\CitiesRepository as repo;
 
 class CitiesController extends Controller
