@@ -10,6 +10,11 @@ app.factory('rest', ['$http', function($http) {
             return $http.get(api_url + controller + '/' + id).then(function(response){
                 return response
             });
-        }
+        },
+        post: function (controller, obj) {
+            return $http.post(api_url + controller, obj).then(function(response){
+                return response
+            });
+        },
     };
 }]);

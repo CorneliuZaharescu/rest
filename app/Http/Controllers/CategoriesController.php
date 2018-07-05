@@ -1,12 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Repository\CategoriesRepository as repo;
 
-use Illuminate\Http\Request;
-use App\Categories;
 class CategoriesController extends Controller
 {
-    public function index(){
-        return Categories::orderBy('id', 'asc')->get();
+    private $repo;
+
+    public function __construct(repo $repo)
+    {
+        $this->repo = $repo;
+    }
+
+    public function index()
+    {
+        return $this->repo->getAll();
     }
 }
