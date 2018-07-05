@@ -5,10 +5,9 @@ app.controller('mainController', function($scope, $http, rest) {
         "city_id": "",
         "start_date": "",
         "end_date": "",
-        "keyword": ""
-    }
-
-    var page = 1;
+        "keyword": "",
+        "page": 1
+    };
 
     rest.get('categories', null).then(function(response){
         $scope.categories = response.data;
@@ -23,31 +22,29 @@ app.controller('mainController', function($scope, $http, rest) {
     };
 
     $scope.getData = function() {
-        rest.post('jobs/search', $scope.search).then(function(response){
-            $scope.data = response.data;
-            $('#search').modal('hide');
-        });
+        $scope.search.page = 1;
+        jobs.init();
     };
 
     $scope.prevPage = function() {
-        page = parseInt(page) - parseInt(1);
+        $scope.search.page = parseInt($scope.search.page) - parseInt(1);
         jobs.init();
     };
 
     $scope.nextPage = function() {
-        page = parseInt(page) + parseInt(1);
+        $scope.search.page = parseInt($scope.search.page) + parseInt(1);
         jobs.init();
     };
 
     var jobs = {
         init: function () {
-            rest.get('jobs', page).then(function(response){
+            rest.get('jobs', $scope.search).then(function(response){
                 $scope.data = response.data;
             });
+            $('#search').modal('hide');
         }
     };
 
     jobs.init();
-
 
 });

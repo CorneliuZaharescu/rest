@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Repository\CategoriesRepository as repo;
 
 class CategoriesController extends Controller

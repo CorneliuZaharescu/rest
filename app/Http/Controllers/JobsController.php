@@ -15,15 +15,11 @@ class JobsController extends Controller
 
     public function index()
     {
-        return $this->repo->getAll();
+        return $this->repo->getAll(Input::all());
     }
 
     public function getItem($id) {
         $item = $this->repo->getById($id);
         return $item;
-    }
-
-    public function search() {
-        return $this->repo->search(Input::all());
     }
 }

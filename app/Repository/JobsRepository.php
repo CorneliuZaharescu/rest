@@ -4,20 +4,22 @@ namespace App\Repository;
 use App\Entities\Jobs;
 use Doctrine\ORM\EntityManager;
 
+/**
+ * TODO
+ * Need implements standard logic flow (Doctrine pagination package) for pagination items
+ */
+
 class JobsRepository {
 
-    private $class = Jobs::class; #'App\Entities\Cities'
+    private $class = Jobs::class;
 
+    protected $perPage = 5;
+    protected $offSet = 0;
     private $em;
 
     public function __construct(EntityManager $em)
     {
         $this->em = $em;
-    }
-
-    public function getAll()
-    {
-        return $this->em->getRepository($this->class)->findAll();
     }
 
     public function getById($id)
@@ -27,8 +29,13 @@ class JobsRepository {
         ]);
     }
 
-    public function search($obj)
+    public function getAll($obj)
     {
+        $this->offSet = ($obj['page'] * $this->perPage) - $this->perPage;
+        if ($this->offSet < 0)
+        {
+            throw new \Exception("Page doesn't exist");
+        }
 
         $query = $this->em->getRepository($this->class)->createQueryBuilder('o')
             ->where('o.job_description LIKE :keyword')
@@ -49,6 +56,6 @@ class JobsRepository {
         {
             $query->andWhere('o.created_at < :end_date')->setParameter('end_date', $obj["end_date"]);
         }
-        return $query->getQuery()->execute();
+        return $query->getQuery()->setFirstResult($this->offSet)->setMaxResults($this->perPage)->execute();
     }
 }
