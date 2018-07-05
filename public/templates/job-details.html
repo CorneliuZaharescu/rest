@@ -1,0 +1,24 @@
+<br/>
+<div class="card border-dark">
+    <h4 class="card-header">Id {{item.id}}</h4>
+    <div class="card-body">
+        <h5>{{item.company_name}}</h5>
+        <p class="text-small text-muted">{{item.company_description}}</p>
+        <h4 class="card-title">{{item.job_title}}</h4>
+        <dl>
+            <dt>Job details</dt>
+            <dd>{{item.job_description}}</dd>
+        </dl>
+        <div class="alert alert-secondary" role="alert">
+            <dl class="row">
+                <dt class="col-sm-3">Company name</dt>
+                <dd class="col-sm-9">{{item.company_name}}</dd>
+                <dt class="col-sm-3">Company phone</dt>
+                <dd class="col-sm-9">{{item.company_phone}}</dd>
+                <dt class="col-sm-3">Company email</dt>
+                <dd class="col-sm-9">{{item.company_email}}</dd>
+            </dl>
+        </div>
+        <a href="#/!" class="btn btn-primary">Back</a>
+    </div>
+</div>

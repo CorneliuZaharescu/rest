@@ -1,0 +1,90 @@
+<h1>Jobs list</h1>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#search">Search</button>
+<br/><br/>
+
+<div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="searchlLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Search</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Categorie</label>
+              <select class="form-control" ng-model="search.category_id" name="category_id">
+                <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label>Locatie</label>
+              <select class="form-control" ng-model="search.city_id" name="city_id">
+                <option ng-repeat="city in cities" value="{{city.id}}">{{city.name}}</option>
+              </select>
+            </div>
+          </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Start date</label>
+              <input type="text" class="form-control" ng-model="search.start_date" name="start_date"/>
+            </div>
+            <div class="form-group col-md-6">
+              <label>End date</label>
+              <input type="text" class="form-control" ng-model="search.end_date" name="end_date"/>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>Keyword</label>
+                <input type="text" class="form-control" ng-model="search.keyword" name="keyword"/>
+            </div>
+        </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="getData()">Search</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Company name</th>
+            <th scope="col">Job title</th>
+            <th scope="col">Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in  data">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.company_name}}</td>
+            <td><a href="#!jobs/{{item.id}}">{{item.job_title}}</a></td>
+            <td>{{item.created_at}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-md-6 offset-md-3 text-center">
+        <div class="btn-group"  role="group" aria-label="Basic example">
+            <button type="button"
+                ng-class="{'btn btn-primary disabled':search.page == 1, 'btn btn-primary': search.page > 1}"
+                ng-click="prevPage()">Previous</button>
+            <button type="button"
+                ng-class="{'btn btn-primary disabled':data.length == 0, 'btn btn-primary': data.length > 0}"
+                ng-click="nextPage()">Next</button>
+        </div>
+    </div>
+</div>
+
