@@ -27,21 +27,28 @@ class JobsRepository {
         ]);
     }
 
-    public function search($obj) {
-        /**
-        * Entiti one to one problem
-        */
-        return $this->em->getRepository($this->class)->createQueryBuilder('o')
-            ->where('o.category = :category_id')
-//            ->andWhere('o.city = :city_id')
-//            ->andWhere('o.created_at BETWEEN :start_date AND :end_date')
-            ->andWhere('o.job_description LIKE :keyword')
-            ->setParameter('category_id', $obj["category_id"])
-//            ->setParameter('city_id', $obj["city_id"])
-//            ->setParameter('start_date', $obj["start_date"])
-//            ->setParameter('end_date', $obj["end_date"])
-            ->setParameter('keyword', '%'. $obj["keyword"]. '%')
-            ->getQuery()
-            ->getResult();
+    public function search($obj)
+    {
+
+        $query = $this->em->getRepository($this->class)->createQueryBuilder('o')
+            ->where('o.job_description LIKE :keyword')
+            ->setParameter('keyword', '%'. $obj["keyword"]. '%');
+        if ($obj["category_id"])
+        {
+            $query->andWhere('o.category = :category_id')->setParameter('category_id', $obj["category_id"]);
+        }
+        if ($obj["city_id"])
+        {
+            $query->andWhere('o.city = :city_id')->setParameter('city_id', $obj["city_id"]);
+        }
+        if ($obj["start_date"])
+        {
+            $query->andWhere('o.created_at > :start_date')->setParameter('start_date', $obj["start_date"]);
+        }
+        if ($obj["end_date"])
+        {
+            $query->andWhere('o.created_at < :end_date')->setParameter('end_date', $obj["end_date"]);
+        }
+        return $query->getQuery()->execute();
     }
 }
