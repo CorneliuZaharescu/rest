@@ -47,16 +47,16 @@ class Jobs
      * @ORM\Column(type="text")
      */
     public $created_at;
-//    /**
-//     * @ORM\@OneToOne(targetEntity="Categories")
-//     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-//     */
-//    public $category_id;
-//    /**
-//     * @ORM\city_id
-//     * @ORM\OneToOne(targetEntity="Cities")
-//     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
-//     */
-//    public $city_id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Categories", inversedBy="jobs")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    public $category;
+    /**
+     * @ORM\ManyToOne(targetEntity="Cities", inversedBy="jobs")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     */
+    public $city;
 
 }

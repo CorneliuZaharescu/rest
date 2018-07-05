@@ -3,7 +3,7 @@
 namespace App\Entities;
 
 use Doctrine\ORM\Mapping AS ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity
  * @ORM\Table(name="categories")
@@ -22,11 +22,17 @@ class Categories
     public $name;
 
     /**
+     * @ORM\OneToMany(targetEntity="Jobs", mappedBy="category")
+     */
+    public $jobs;
+
+    /**
     * @param $name
     */
     public function __construct($name)
     {
         $this->name = $name;
+        $this->jobs = new ArrayCollection();
     }
 
     public function getId()
